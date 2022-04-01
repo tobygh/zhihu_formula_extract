@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "zhihu_latex_extract",
+    "version": "1.0.0",
+    "description": "img_data_formular",
+    "icons":
+    {
+        "16": "icons/zhihu_tex_1_1.png",
+        "48": "icons/zhihu_tex_1_1.png",
+        "128": "icons/zhihu_tex_1_1.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://zhuanlan.zhihu.com/p/*"],
+            "js":["scripts/background.js"]
+        }
+    ],
+
+    "browser_action": 
+    {
+        "default_icon": "icons/zhihu_tex_1_1.png"
+    }
+}
