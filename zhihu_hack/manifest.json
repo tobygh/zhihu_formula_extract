@@ -1,8 +1,8 @@
 {
-    "manifest_version": 2,
-    "name": "zhihu_latex_extract",
+    "manifest_version": 3,
+    "name": "zhihu latex extract",
     "version": "1.0.0",
-    "description": "img_data_formular",
+    "description": "visualize data-formular attribute with a label",
     "icons":
     {
         "16": "icons/zhihu_tex_1_1.png",
@@ -16,7 +16,7 @@
         }
     ],
 
-    "browser_action": 
+    "action": 
     {
         "default_icon": "icons/zhihu_tex_1_1.png"
     }
