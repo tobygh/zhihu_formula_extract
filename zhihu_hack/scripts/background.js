@@ -19,7 +19,7 @@ function create_decoration(formula_imgs){
     styleElement.type = 'text/css';
     styleElement.id = 'styles_js1';
                                     //background-color: yellow;transition-timing-function: ease-in-out;transition-duration: 0.4s;
-    styleElement.innerText = ".formula_box{ color:rgba(0 0 0 / 8%); border: solid 1px rgba(0 0 0 / 8%);font-size:14px;padding:0 5px 0 5px;};";
+    styleElement.innerText = ".formula_box{ color:rgba(0 0 0 / 1%); border: solid 1px rgba(0 0 0 / 3%);font-size:10px;line-height:14px;padding:0 5px 0 5px;overflow:hidden;};";
     document.getElementsByTagName('head')[0].appendChild(styleElement);
 
 
@@ -27,7 +27,7 @@ function create_decoration(formula_imgs){
     styleElement.type = 'text/css';
     styleElement.id = 'styles_js2';
                                     //background-color: yellow;
-    styleElement.innerText = ".formula_box:hover{ background-color: white;color:rgba(0 0 0 );border: solid 1px rgba(0 0 0);}";
+    styleElement.innerText = ".formula_box:hover{ background-color: white;color:rgba(0 0 0 );border: solid 1px rgba(0 0 0);overflow:visible;}";
     document.getElementsByTagName('head')[0].appendChild(styleElement);
 
     for(const img of formula_imgs){
@@ -41,10 +41,9 @@ function create_decoration(formula_imgs){
         formula_div.setAttribute("class" ,"formula_box");
         formula_div.style.position = 'absolute';
         rect = img.getBoundingClientRect();
-        // formula_div.style.top = rect.y-document.body.getBoundingClientRect().y+'px';
-        // formula_div.style.left = rect.x+'px';
-        // formula_div.style.top = -rect.height+"px";
-        // formula_div.style.left = 0+"px";
+        formula_div.style.height = img.offsetHeight + "px";
+        formula_div.style.width = img.offsetWidth + "px";
+
         img.outerHTML = '<div style="display:inline-block">'+formula_div.outerHTML+img.outerHTML+'</div>';
         // document.body.appendChild(formula_div);
     }
